@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="サッカー人生を懸けた選手とスカウトをつなぐ、新しいプラットフォーム" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- iOS text rendering fix -->
+    <meta name="color-scheme" content="dark">
+    <!-- iOS Safari specific fixes -->
+    <meta name="apple-mobile-web-app-title" content="SOCOUT">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>SOCOUT - サッカー選手とスカウトをつなぐプラットフォーム</title>
+    <!-- iOS gradient text fix -->
+    <style>
+      @supports (-webkit-touch-callout: none) {
+        .bg-clip-text.text-transparent.bg-gradient-to-r {
+          background-image: linear-gradient(to right, #60a5fa, #3b82f6);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: transparent;
+          text-shadow: none;
+          font-weight: 800;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

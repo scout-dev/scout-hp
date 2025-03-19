@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.full-screen-img {
+    width: 100vw; /* 横幅を画面いっぱいに */
+    height: 100vh; /* 高さを画面いっぱいに */
+    object-fit: cover; /* 画像をトリミングしてフィット */
+    display: block; /* 余計な余白をなくす */
+}
+
+/* Swiper カスタマイズ */
+.player-swiper {
+    padding-bottom: 50px;
+}
+
+.player-swiper .swiper-button-next,
+.player-swiper .swiper-button-prev {
+    color: white;
+}
+
+.player-swiper .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+}
+
+.player-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: white;
+}
+
+/* About section styles */
+.about-section-element {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Shadow text effect for the slogan */
+.shadow-text {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    position: relative;
+    display: inline-block;
+}
+
+.shadow-text ::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+/* Modern design styles */
+.hero-title {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modern swiper styles */
+.services-swiper {
+    padding-bottom: 50px;
+}
+
+.services-swiper .swiper-button-next,
+.services-swiper .swiper-button-prev {
+    color: white;
+    background: rgba(59, 130, 246, 0.3);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+}
+
+.services-swiper .swiper-button-next:after,
+.services-swiper .swiper-button-prev:after {
+    font-size: 18px;
+}
+
+.services-swiper .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+}
+
+.services-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #3b82f6;
+}
+
+/* Testimonials swiper */
+.testimonials-swiper {
+    padding-bottom: 50px;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #3b82f6;
+}
+
+/* Improved text visibility */
+.text-gray-300 {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.text-gray-400 {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.text-gray-500 {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+    
+    .services-swiper,
+    .testimonials-swiper {
+        padding-bottom: 40px;
+    }
+    
+    /* Improve tap targets for mobile */
+    a, button {
+        padding: 0.5rem;
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Fix for iOS Safari viewport height issues */
+    .min-h-screen {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Fix for iOS text size adjustment */
+@media screen and (max-width: 768px) {
+    body {
+        -webkit-text-size-adjust: none;
+    }
+    
+    input, textarea, select, button {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+    }
+}
+
+/* Fix for mobile Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+    .min-h-screen {
+        height: -webkit-fill-available;
+    }
+}
+
+/* iPhone-specific fixes */
+@media screen and (max-width: 428px) {
+    /* Ensure text is clearly visible */
+    p, h1, h2, h3, h4, h5, h6, span, a, li {
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+        font-weight: 500;
+    }
+    
+    /* Improve contrast for better readability */
+    .bg-white\/5 {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Ensure buttons are easily tappable */
+    .rounded-full {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Fix for iOS Safari scrolling */
+    html, body {
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+    }
+    
+    /* Ensure proper spacing on small screens */
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    /* Improve text contrast */
+    .text-white {
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+    }
+    
+    /* Fix for background elements */
+    .backdrop-blur-md {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
+    
+    /* Improve card readability */
+    .border-white\/10 {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Fix for iOS text rendering */
+    .text-transparent {
+        -webkit-text-fill-color: transparent;
+    }
+    
+    /* Improve gradient text on iOS */
+    .bg-clip-text {
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
