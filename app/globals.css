@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #ffffff;
+}
+
+.full-screen-img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+/* Swiper カスタマイズ */
+.player-swiper {
+    padding-bottom: 50px;
+}
+
+.player-swiper .swiper-button-next,
+.player-swiper .swiper-button-prev {
+    color: white;
+}
+
+.player-swiper .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+}
+
+.player-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: white;
+}
+
+/* About section styles */
+.about-section-element {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Shadow text effect for the slogan */
+.shadow-text {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    position: relative;
+    display: inline-block;
+}
+
+.shadow-text ::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+/* Modern design styles */
+.hero-title {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modern swiper styles */
+.services-swiper {
+    padding-bottom: 50px;
+}
+
+.services-swiper .swiper-button-next,
+.services-swiper .swiper-button-prev {
+    color: white;
+    background: rgba(59, 130, 246, 0.3);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+}
+
+.services-swiper .swiper-button-next:after,
+.services-swiper .swiper-button-prev:after {
+    font-size: 18px;
+}
+
+.services-swiper .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+}
+
+.services-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #3b82f6;
+}
+
+/* Testimonials swiper */
+.testimonials-swiper {
+    padding-bottom: 50px;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #3b82f6;
+}
+
+/* Force text colors to be solid white instead of semi-transparent */
+.text-gray-300, .text-gray-400, .text-gray-500 {
+    color: #ffffff !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+    
+    .services-swiper,
+    .testimonials-swiper {
+        padding-bottom: 40px;
+    }
+    
+    /* Improve tap targets for mobile */
+    a, button {
+        padding: 0.5rem;
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Fix for iOS Safari viewport height issues */
+    .min-h-screen {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Fix for iOS text size adjustment */
+@media screen and (max-width: 768px) {
+    body {
+        -webkit-text-size-adjust: none;
+    }
+    
+    input, textarea, select, button {
+        font-size: 16px;
+    }
+}
+
+/* Fix for mobile Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+    .min-h-screen {
+        height: -webkit-fill-available;
+    }
+}
+
+/* iPhone-specific fixes */
+@media screen and (max-width: 428px) {
+    /* Footer specific styles for mobile */
+    footer .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    footer h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    footer ul {
+        margin-top: 0.5rem;
+    }
+    
+    footer ul li a,
+    footer ul li span {
+        font-size: 0.875rem;
+        padding: 0.25rem 0;
+    }
+    
+    footer .text-blue-400 {
+        font-weight: 600;
+    }
+    
+    /* Ensure text is clearly visible with solid colors */
+    p, h1, h2, h3, h4, h5, h6, span, a, li {
+        color: #ffffff;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+        font-weight: 500;
+    }
+    
+    /* Improve contrast for better readability */
+    .bg-white\/5 {
+        background-color: rgba(30, 30, 30, 0.8);
+    }
+    
+    /* Ensure buttons are easily tappable */
+    .rounded-full {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Fix for iOS Safari scrolling */
+    html, body {
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Ensure proper spacing on small screens */
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    /* Fix for background elements */
+    .backdrop-blur-md {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
+    
+    /* Improve card readability */
+    .border-white\/10 {
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Enhanced gradient text for iOS */
+    .bg-clip-text.text-transparent.bg-gradient-to-r {
+        background-image: linear-gradient(to right, #60a5fa, #3b82f6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        text-shadow: none;
+        font-weight: 800;
+        filter: drop-shadow(0 0 1px rgba(59, 130, 246, 0.5));
+    }
+    
+    /* Hero title enhancement for iOS */
+    .hero-title {
+        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+    }
+    
+    /* Fix for iOS Safari font rendering */
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Fix for iOS Safari backdrop filter */
+    .bg-black\/80 {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    
+    /* Fix for iOS Safari image rendering */
+    img {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    
+    /* Center the down arrow */
+    .animate-bounce {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Improve background colors for sections */
+    #about, #operators {
+        background-color: #0a0a0a;
+    }
+    
+    /* Fix registration and LINE sections */
+    .bg-white\/5.backdrop-blur-sm {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    /* Footer specific spacing adjustments */
+    footer ul.space-y-0.5 li a,
+    footer ul.space-y-0.5 li {
+        padding: 0.25rem 0;
+        line-height: 1.2;
+    }
+}
