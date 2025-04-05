@@ -683,6 +683,7 @@ export default function Home() {
           
           <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 text-center text-white text-sm">
             <p>&copy; LLC BridgeAhead　All rights reserved.</p>
+            <p>&copy; LLC BridgeAhead　確認</p>
           </div>
         </div>
       </footer>
